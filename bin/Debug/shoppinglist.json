@@ -1,6 +1,12 @@
 [
   {
-    "Id": 1,
-    "Name": "Apple"
+    "ListId": 1,
+    "Name": "Fruits",
+    "Items": [
+      {
+        "Id": 1,
+        "Name": "Apple Php100"
+      }
+    ]
   }
 ]

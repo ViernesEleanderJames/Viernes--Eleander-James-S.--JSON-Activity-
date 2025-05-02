@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Documents\\GitHub\\Viernes,EleanderJames(shoppinglist.json)\\Viernes,EleanderJames(shoppinglist.json).csproj": {}
+    "C:\\Users\\User\\Source\\Repos\\Viernes--Eleander-James-S.--JSON-Activity-\\Viernes,EleanderJames(shoppinglist.json).csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Documents\\GitHub\\Viernes,EleanderJames(shoppinglist.json)\\Viernes,EleanderJames(shoppinglist.json).csproj": {
+    "C:\\Users\\User\\Source\\Repos\\Viernes--Eleander-James-S.--JSON-Activity-\\Viernes,EleanderJames(shoppinglist.json).csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\Viernes,EleanderJames(shoppinglist.json)\\Viernes,EleanderJames(shoppinglist.json).csproj",
+        "projectUniqueName": "C:\\Users\\User\\Source\\Repos\\Viernes--Eleander-James-S.--JSON-Activity-\\Viernes,EleanderJames(shoppinglist.json).csproj",
         "projectName": "Viernes,EleanderJames(shoppinglist.json)",
-        "projectPath": "C:\\Users\\User\\Documents\\GitHub\\Viernes,EleanderJames(shoppinglist.json)\\Viernes,EleanderJames(shoppinglist.json).csproj",
+        "projectPath": "C:\\Users\\User\\Source\\Repos\\Viernes--Eleander-James-S.--JSON-Activity-\\Viernes,EleanderJames(shoppinglist.json).csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Documents\\GitHub\\Viernes,EleanderJames(shoppinglist.json)\\obj\\",
+        "outputPath": "C:\\Users\\User\\Source\\Repos\\Viernes--Eleander-James-S.--JSON-Activity-\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "UsingMicrosoftNETSdk": false,

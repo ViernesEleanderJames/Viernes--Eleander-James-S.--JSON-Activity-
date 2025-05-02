@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace GroceryApp
 {
     public partial class FormAdd : Form
     {
         private List<GroceryItem> groceries = new List<GroceryItem>();
-        private string filePath = "shoppinglist.json";
+        private const string filePath = "shoppinglist.json";
 
         public FormAdd()
         {
@@ -27,7 +26,11 @@ namespace GroceryApp
 
             if (!string.IsNullOrWhiteSpace(txtName.Text))
             {
-                groceries.Add(new GroceryItem { Id = groceries.Count + 1, Name = txtName.Text.Trim() });
+                groceries.Add(new GroceryItem
+                {
+                    Id = groceries.Count + 1,
+                    Name = txtName.Text.Trim()
+                });
                 listBox1.Items.Add(txtName.Text.Trim());
                 txtName.Clear();
             }
@@ -37,12 +40,33 @@ namespace GroceryApp
             }
         }
 
-        private async void btnSave_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             if (groceries.Count > 0)
             {
-                string json = JsonSerializer.Serialize(groceries, new JsonSerializerOptions { WriteIndented = true });
+                List<GroceryList> allLists = new List<GroceryList>();
+
+                if (File.Exists(filePath))
+                {
+                    string existingJson = File.ReadAllText(filePath);
+                    allLists = JsonSerializer.Deserialize<List<GroceryList>>(existingJson) ?? new List<GroceryList>();
+                }
+
+                int newListId = (allLists.Count > 0) ? allLists[allLists.Count - 1].ListId + 1 : 1;
+
+                // Add list name from the text box
+                GroceryList newList = new GroceryList
+                {
+                    ListId = newListId,
+                    Name = txtListName.Text.Trim(), // Get the list name from the TextBox
+                    Items = groceries
+                };
+
+                allLists.Add(newList);
+
+                string json = JsonSerializer.Serialize(allLists, new JsonSerializerOptions { WriteIndented = true });
                 File.WriteAllText(filePath, json);
+
                 MessageBox.Show("Shopping list saved successfully!", "Success");
                 this.Close();
             }
@@ -53,4 +77,3 @@ namespace GroceryApp
         }
     }
 }
-
